@@ -120,6 +120,18 @@
   <data name="AccessibleName" xml:space="preserve">
     <value>Allows generation of PESEL, NIP, REGON</value>
   </data>
+  <data name="CliEnableMultithreading" xml:space="preserve">
+    <value>when enabled app will run k = 1 + 3.3 * Log10(Number) jobs</value>
+  </data>
+  <data name="CliGeneratorType" xml:space="preserve">
+    <value>Select id generator type. Current available option is: Pesel</value>
+  </data>
+  <data name="CliNumberPropertyDescription" xml:space="preserve">
+    <value>Defines the number of data to be generated</value>
+  </data>
+  <data name="CliOutputFilePath" xml:space="preserve">
+    <value>define output file path</value>
+  </data>
   <data name="Description" xml:space="preserve">
     <value>Library for generating correct Polish identifiers: PESEL, NIP, REGON and more. Perfect for testing and validating systems.</value>
   </data>

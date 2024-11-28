@@ -70,6 +70,42 @@ namespace DevToys.PolishDataGen.Strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to when enabled app will run k = 1 + 3.3 * Log10(Number) jobs.
+        /// </summary>
+        internal static string CliEnableMultithreading {
+            get {
+                return ResourceManager.GetString("CliEnableMultithreading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select id generator type. Current available option is: Pesel.
+        /// </summary>
+        internal static string CliGeneratorType {
+            get {
+                return ResourceManager.GetString("CliGeneratorType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Defines the number of data to be generated.
+        /// </summary>
+        internal static string CliNumberPropertyDescription {
+            get {
+                return ResourceManager.GetString("CliNumberPropertyDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to define output file path.
+        /// </summary>
+        internal static string CliOutputFilePath {
+            get {
+                return ResourceManager.GetString("CliOutputFilePath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Library for generating correct Polish identifiers: PESEL, NIP, REGON and more. Perfect for testing and validating systems..
         /// </summary>
         internal static string Description {
