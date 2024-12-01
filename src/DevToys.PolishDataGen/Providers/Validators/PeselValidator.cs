@@ -32,8 +32,8 @@ public class PeselValidator : IPolishIdValidator
         if (value.Length != 11) return false;
         if (!value.All(char.IsAsciiDigit)) return false;
         if (value.All(c => c == '0') || value.All(c => c == '9')) return false;
-        if (!((int.Parse(value.Substring(MmStartIndex, 2)) % 20) is > 0 and < 13)) return false;
-        if (!(int.Parse(value.Substring(DdStartIndex, 2)) is > 0 and <= 31)) return false;
+        if (!((int.Parse(value.AsSpan(MmStartIndex, 2)) % 20) is > 0 and < 13)) return false;
+        if (!(int.Parse(value.AsSpan(DdStartIndex, 2)) is > 0 and <= 31)) return false;
         if (CalculateControlNumber(value) != (value[KStartIndex] - '0')) return false;
 
         return true;
@@ -56,8 +56,8 @@ public class PeselValidator : IPolishIdValidator
         if (value.Length != 11) yield return "PESEL must be 11 characters long";
         if (!value.All(char.IsAsciiDigit)) yield return "PESEL must contain only digits";
         if (value.All(c => c == '0') || value.All(c => c == '9')) yield return "PESEL cannot be composed only from 0 or 9 digits";
-        if (!((int.Parse(value.Substring(MmStartIndex, 2)) % 20) is > 0 and < 13)) yield return "PESEL Month part must be in range 1 to 12";
-        if (!(int.Parse(value.Substring(DdStartIndex, 2)) is > 0 and <= 31)) yield return "PESEL Day part must be in range 1 to 31";
+        if (!((int.Parse(value.AsSpan(MmStartIndex, 2)) % 20) is > 0 and < 13)) yield return "PESEL Month part must be in range 1 to 12";
+        if (!(int.Parse(value.AsSpan(DdStartIndex, 2)) is > 0 and <= 31)) yield return "PESEL Day part must be in range 1 to 31";
         if (value.Length == 11 && CalculateControlNumber(value) != (value[KStartIndex] - '0')) yield return "PESEL invalid control number";
     }
 }
