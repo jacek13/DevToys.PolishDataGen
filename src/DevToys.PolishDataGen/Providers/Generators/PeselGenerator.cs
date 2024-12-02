@@ -33,7 +33,7 @@ public class PeselGenerator : IPolishIdGenerator
         var ppp = _random.Next(100, 999);
         var sex = _random.Next(0, 9);
         var pesel = $"{(year % 100):D2}{(GetCenturyBase(year) + month):D2}{day:D2}{ppp}{sex}d";
-        return pesel.Replace('d', (char)(CalculateControlNumber(pesel) + '0'));
+        return $"{pesel.AsSpan(0, 10)}{(char)(CalculateControlNumber(pesel) + '0')}";
     }
 
     public IEnumerable<string> CreateMany(int count)
