@@ -27,7 +27,6 @@ public class PeselValidator : IPolishIdValidator
 
     public bool IsValid(string value)
     {
-        // TODO refactor .Substring() method call to reduce memory allocation
         if (string.IsNullOrWhiteSpace(value)) return false;
         if (value.Length != 11) return false;
         if (!value.All(char.IsAsciiDigit)) return false;
@@ -50,14 +49,19 @@ public class PeselValidator : IPolishIdValidator
 
     private IEnumerable<string> GetValidationMessages(string value)
     {
-        // TODO refactor .Substring() method call to reduce memory allocation
-        // TODO prepare some strings in PolishDataGen.resx or move to some const dict structure
-        if (string.IsNullOrWhiteSpace(value)) yield return "PESEL must contain some values";
-        if (value.Length != 11) yield return "PESEL must be 11 characters long";
-        if (!value.All(char.IsAsciiDigit)) yield return "PESEL must contain only digits";
-        if (value.All(c => c == '0') || value.All(c => c == '9')) yield return "PESEL cannot be composed only from 0 or 9 digits";
-        if (!((int.Parse(value.AsSpan(MmStartIndex, 2)) % 20) is > 0 and < 13)) yield return "PESEL Month part must be in range 1 to 12";
-        if (!(int.Parse(value.AsSpan(DdStartIndex, 2)) is > 0 and <= 31)) yield return "PESEL Day part must be in range 1 to 31";
-        if (value.Length == 11 && CalculateControlNumber(value) != (value[KStartIndex] - '0')) yield return "PESEL invalid control number";
+        if (string.IsNullOrWhiteSpace(value))
+            yield return Strings.PolishDataGen.PeselValidationNotEmptyMessage;
+        if (value.Length != 11)
+            yield return Strings.PolishDataGen.PeselValidationLengthMessage;
+        if (!value.All(char.IsAsciiDigit))
+            yield return Strings.PolishDataGen.PeselValidationOnlyDigitsMessage;
+        if (value.All(c => c == '0') || value.All(c => c == '9'))
+            yield return Strings.PolishDataGen.PeselValidationExtremeValuesMessage;
+        if (!((int.Parse(value.AsSpan(MmStartIndex, 2)) % 20) is > 0 and < 13))
+            yield return Strings.PolishDataGen.PeselValidationMonthRangeMessage;
+        if (!(int.Parse(value.AsSpan(DdStartIndex, 2)) is > 0 and <= 31))
+            yield return Strings.PolishDataGen.PeselValidationDayRangeMessage;
+        if (value.Length == 11 && CalculateControlNumber(value) != (value[KStartIndex] - '0'))
+            yield return Strings.PolishDataGen.PeselValidationControlNumberMessage;
     }
 }

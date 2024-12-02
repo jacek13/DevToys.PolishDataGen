@@ -124,6 +124,69 @@ namespace DevToys.PolishDataGen.Strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to PESEL invalid control number.
+        /// </summary>
+        internal static string PeselValidationControlNumberMessage {
+            get {
+                return ResourceManager.GetString("PeselValidationControlNumberMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PESEL Day part must be in range 1 to 31.
+        /// </summary>
+        internal static string PeselValidationDayRangeMessage {
+            get {
+                return ResourceManager.GetString("PeselValidationDayRangeMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PESEL cannot be composed only from 0 or 9 digits.
+        /// </summary>
+        internal static string PeselValidationExtremeValuesMessage {
+            get {
+                return ResourceManager.GetString("PeselValidationExtremeValuesMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PESEL must be 11 characters long.
+        /// </summary>
+        internal static string PeselValidationLengthMessage {
+            get {
+                return ResourceManager.GetString("PeselValidationLengthMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PESEL Month part must be in range 1 to 12.
+        /// </summary>
+        internal static string PeselValidationMonthRangeMessage {
+            get {
+                return ResourceManager.GetString("PeselValidationMonthRangeMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PESEL must contain some value.
+        /// </summary>
+        internal static string PeselValidationNotEmptyMessage {
+            get {
+                return ResourceManager.GetString("PeselValidationNotEmptyMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PESEL must contain only digits.
+        /// </summary>
+        internal static string PeselValidationOnlyDigitsMessage {
+            get {
+                return ResourceManager.GetString("PeselValidationOnlyDigitsMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Generate Polish IDs.
         /// </summary>
         internal static string PolishDataGenLabel {
