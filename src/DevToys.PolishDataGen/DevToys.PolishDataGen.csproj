@@ -11,8 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Cli\" />
-    <Folder Include="Providers\" />
+    <Folder Include="Helpers\" />
     <Folder Include="Properties\" />
   </ItemGroup>
 

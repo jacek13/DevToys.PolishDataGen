@@ -17,6 +17,15 @@ public interface IPolishIdGenerator
     /// Creates a specified number of identifiers.
     /// </summary>
     /// <param name="count">The number of identifiers to generate.</param>
-    /// <returns>A collection of generated identifiers.</returns>
-    IReadOnlyCollection<string> CreateMany(int count);
+    /// <returns>A enumerable of generated identifiers.</returns>
+    IEnumerable<string> CreateMany(int count);
+
+    /// <summary>
+    /// Calculates the control number for the provided identification number.
+    /// </summary>
+    /// <param name="value">The identification number to calculate the control number for.</param>
+    /// <returns>
+    /// The calculated control number as an integer.
+    /// </returns>
+    int CalculateControlNumber(string value);
 }
