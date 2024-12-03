@@ -88,6 +88,33 @@ namespace DevToys.PolishDataGen.Strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to With such large numbers it is recommended to use the CLI version.
+        /// </summary>
+        internal static string CliInfoBarContent {
+            get {
+                return ResourceManager.GetString("CliInfoBarContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Warning.
+        /// </summary>
+        internal static string CliInfoBarTitle {
+            get {
+                return ResourceManager.GetString("CliInfoBarTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output.
+        /// </summary>
+        internal static string CliMultiLineTextInputTitle {
+            get {
+                return ResourceManager.GetString("CliMultiLineTextInputTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Defines the number of data to be generated.
         /// </summary>
         internal static string CliNumberPropertyDescription {
@@ -111,6 +138,33 @@ namespace DevToys.PolishDataGen.Strings {
         internal static string Description {
             get {
                 return ResourceManager.GetString("Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Clear memory.
+        /// </summary>
+        internal static string GuiClearMemoryButtonLabel {
+            get {
+                return ResourceManager.GetString("GuiClearMemoryButtonLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Generate.
+        /// </summary>
+        internal static string GuiGenerateButtonLabel {
+            get {
+                return ResourceManager.GetString("GuiGenerateButtonLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number of data to generate.
+        /// </summary>
+        internal static string GuiNumberInputLabel {
+            get {
+                return ResourceManager.GetString("GuiNumberInputLabel", resourceCulture);
             }
         }
         

@@ -126,6 +126,15 @@
   <data name="CliGeneratorType" xml:space="preserve">
     <value>Select id generator type. Current available option is: Pesel</value>
   </data>
+  <data name="CliInfoBarContent" xml:space="preserve">
+    <value>With such large numbers it is recommended to use the CLI version</value>
+  </data>
+  <data name="CliInfoBarTitle" xml:space="preserve">
+    <value>Warning</value>
+  </data>
+  <data name="CliMultiLineTextInputTitle" xml:space="preserve">
+    <value>Output</value>
+  </data>
   <data name="CliNumberPropertyDescription" xml:space="preserve">
     <value>Defines the number of data to be generated</value>
   </data>
@@ -134,6 +143,15 @@
   </data>
   <data name="Description" xml:space="preserve">
     <value>Library for generating correct Polish identifiers: PESEL, NIP, REGON and more. Perfect for testing and validating systems.</value>
+  </data>
+  <data name="GuiClearMemoryButtonLabel" xml:space="preserve">
+    <value>Clear memory</value>
+  </data>
+  <data name="GuiGenerateButtonLabel" xml:space="preserve">
+    <value>Generate</value>
+  </data>
+  <data name="GuiNumberInputLabel" xml:space="preserve">
+    <value>Number of data to generate</value>
   </data>
   <data name="LongDisplayTitle" xml:space="preserve">
     <value>Polish Data Generator</value>

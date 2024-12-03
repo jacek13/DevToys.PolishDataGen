@@ -1,4 +1,4 @@
-﻿namespace DevToys.PolishDataGen.Cli;
+﻿namespace DevToys.PolishDataGen.Providers.Generators;
 
 internal enum GeneratorType
 {

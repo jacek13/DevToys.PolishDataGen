@@ -1,7 +1,6 @@
 ﻿using DevToys.PolishDataGen.Interfaces;
-using DevToys.PolishDataGen.Providers.Generators;
 
-namespace DevToys.PolishDataGen.Cli;
+namespace DevToys.PolishDataGen.Providers.Generators;
 
 internal static class GeneratorFactory
 {
