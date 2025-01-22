@@ -250,6 +250,51 @@ namespace DevToys.PolishDataGen.Strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to REGON invalid control number.
+        /// </summary>
+        internal static string RegonValidationControlNumberMessage {
+            get {
+                return ResourceManager.GetString("RegonValidationControlNumberMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to REGON cannot be composed only from 0 or 9 digits.
+        /// </summary>
+        internal static string RegonValidationExtremeValuesMessage {
+            get {
+                return ResourceManager.GetString("RegonValidationExtremeValuesMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to REGON must be 9 or 14 characters long.
+        /// </summary>
+        internal static string RegonValidationLengthMessage {
+            get {
+                return ResourceManager.GetString("RegonValidationLengthMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to REGON must contain some value.
+        /// </summary>
+        internal static string RegonValidationNotEmptyMessage {
+            get {
+                return ResourceManager.GetString("RegonValidationNotEmptyMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to REGON must contain only digits.
+        /// </summary>
+        internal static string RegonValidationOnlyDigitsMessage {
+            get {
+                return ResourceManager.GetString("RegonValidationOnlyDigitsMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Polish Data Gen.
         /// </summary>
         internal static string ShortDisplayTitle {

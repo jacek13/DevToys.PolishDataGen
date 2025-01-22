@@ -180,6 +180,21 @@
   <data name="PolishDataGenLabel" xml:space="preserve">
     <value>Generate Polish IDs</value>
   </data>
+  <data name="RegonValidationControlNumberMessage" xml:space="preserve">
+    <value>REGON invalid control number</value>
+  </data>
+  <data name="RegonValidationExtremeValuesMessage" xml:space="preserve">
+    <value>REGON cannot be composed only from 0 or 9 digits</value>
+  </data>
+  <data name="RegonValidationLengthMessage" xml:space="preserve">
+    <value>REGON must be 9 or 14 characters long</value>
+  </data>
+  <data name="RegonValidationNotEmptyMessage" xml:space="preserve">
+    <value>REGON must contain some value</value>
+  </data>
+  <data name="RegonValidationOnlyDigitsMessage" xml:space="preserve">
+    <value>REGON must contain only digits</value>
+  </data>
   <data name="ShortDisplayTitle" xml:space="preserve">
     <value>Polish Data Gen</value>
   </data>
