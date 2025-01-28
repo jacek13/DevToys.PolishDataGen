@@ -14,11 +14,11 @@ public class RegonValidator : IPolishIdValidator
 
     public int CalculateControlNumber(string value)
     {
-        var regonDigits = new List<int>(value.Length == 9 ? 8 : 13);
+        var regonDigits = new int[value.Length == 9 ? 8 : 13];
         for (ushort i = 0; i < value.Length - 1; i++)
         {
             var digit = (value[i] - '0') * (value.Length == 9 ? ControlMask[i] : ControlMaskLong[i]);
-            regonDigits.Insert(i, digit);
+            regonDigits[i] = digit;
         }
 
         var result = regonDigits.Sum() % 11;
