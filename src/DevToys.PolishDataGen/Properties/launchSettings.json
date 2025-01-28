@@ -11,7 +11,7 @@
     "DevToys CLI": {
       "commandName": "Executable",
       "executablePath": "%DevToysCliDebugEntryPoint%",
-      "commandLineArgs": "pdg --type pesel --number 100 -mt",
+      "commandLineArgs": "pdg --type regon --number 100 -mt",
       "environmentVariables": {
         "EXTRAPLUGIN": "$(TargetDir)"
       }

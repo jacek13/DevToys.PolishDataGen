@@ -8,6 +8,7 @@ internal static class GeneratorFactory
         => type switch
         {
             GeneratorType.Pesel => new PeselGenerator(),
+            GeneratorType.Regon => new RegonGenerator(),
             _ => throw new NotImplementedException($"Not supported type = {type.ToString()}!"),
         };
 }
