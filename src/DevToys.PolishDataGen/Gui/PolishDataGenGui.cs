@@ -66,7 +66,8 @@ internal sealed class PolishDataGenGui : IGuiTool
         _dropdownList = SelectDropDownList()
             .AlignHorizontally(UIHorizontalAlignment.Left)
             .WithItems(
-                Item(text: "Pesel", value: GeneratorType.Pesel))
+                Item(text: "Pesel", value: GeneratorType.Pesel),
+                Item(text: "Regon", value: GeneratorType.Regon))
             .Select(0)
             .OnItemSelected(OnGeneratorTypeSelected);
 

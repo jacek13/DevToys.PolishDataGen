@@ -43,8 +43,7 @@ internal class PolishDataGeneratorCommandLineTool : ICommandLineTool
             return -1;
         }
 
-        GeneratorType type = GeneratorTypeHelper.ConvertToGeneratorType(Type);
-        IPolishIdGenerator generator = GeneratorFactory.Create(type);
+        IPolishIdGenerator generator = GeneratorFactory.Create(_generatorType);
         var results = new ConcurrentBag<string>();
         var timer = Stopwatch.StartNew();
 
@@ -116,6 +115,7 @@ internal class PolishDataGeneratorCommandLineTool : ICommandLineTool
         => Type switch
         {
             GeneratorType.Pesel => Task.FromResult(new PeselGenerator().CreateMany(count)),
+            GeneratorType.Regon => Task.FromResult(new RegonGenerator().CreateMany(count)),
             _ => Task.FromResult(Enumerable.Empty<string>())
         };
 
