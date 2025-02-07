@@ -67,7 +67,8 @@ internal sealed class PolishDataGenGui : IGuiTool
             .AlignHorizontally(UIHorizontalAlignment.Left)
             .WithItems(
                 Item(text: "Pesel", value: GeneratorType.Pesel),
-                Item(text: "Regon", value: GeneratorType.Regon))
+                Item(text: "Regon (9-digit)", value: GeneratorType.Regon),
+                Item(text: "Regon (14-digit)", value: GeneratorType.RegonLong))
             .Select(0)
             .OnItemSelected(OnGeneratorTypeSelected);
 

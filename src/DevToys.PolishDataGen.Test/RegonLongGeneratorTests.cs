@@ -5,7 +5,7 @@ namespace DevToys.PolishDataGen.Test;
 
 public class RegonLongGeneratorTests
 {
-    private readonly RegonLongGenerator _generator;
+    private readonly RegonGeneratorBase _generator;
     private readonly RegonValidator _validator;
 
     public RegonLongGeneratorTests()

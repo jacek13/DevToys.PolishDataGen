@@ -1,23 +1,20 @@
-﻿using DevToys.PolishDataGen.Interfaces;
+﻿namespace DevToys.PolishDataGen.Providers.Generators;
 
-namespace DevToys.PolishDataGen.Providers.Generators;
-
-public class RegonLongGenerator : IPolishIdGenerator
+public class RegonLongGenerator : RegonGeneratorBase
 {
-    public ushort[] ControlMask => throw new NotImplementedException();
+    public override ushort[] ControlMask { get; } = { 2, 4, 8, 5, 0, 9, 7, 3, 6, 1, 2, 4, 8 };
 
-    public int CalculateControlNumber(string value)
-    {
-        throw new NotImplementedException();
-    }
+    private readonly Random _random = new Random();
 
-    public string Create()
+    public override string Create()
     {
-        throw new NotImplementedException();
-    }
+        var shufflePrefix = _random.Next(0, 100);
+        var prefix = shufflePrefix % 2 == 0
+            ? RegonEvenPrefixes[_random.Next(0, RegonEvenPrefixes.Length)]
+            : RegonOddPrefixes[_random.Next(0, RegonOddPrefixes.Length)];
+        var serialNumber = _random.NextInt64(0, 99999999999);
 
-    public IEnumerable<string> CreateMany(int count)
-    {
-        throw new NotImplementedException();
+        var regon = $"{prefix:D2}{serialNumber:D11}d";
+        return $"{regon.AsSpan(0, 13)}{(char)(CalculateControlNumber(regon) + '0')}";
     }
 }
