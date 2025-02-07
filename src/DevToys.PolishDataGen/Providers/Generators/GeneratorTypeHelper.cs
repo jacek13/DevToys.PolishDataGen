@@ -8,6 +8,8 @@ internal static class GeneratorTypeHelper
         : type.Trim().ToLower() switch
         {
             "pesel" => GeneratorType.Pesel,
+            "regon" => GeneratorType.Regon,
+            "regon-long" => GeneratorType.RegonLong,
             _ => GeneratorType.Unknown,
         };
 }

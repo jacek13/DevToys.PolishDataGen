@@ -19,10 +19,10 @@ namespace DevToys.PolishDataGen.Cli;
 internal class PolishDataGeneratorCommandLineTool : ICommandLineTool
 {
     [CommandLineOption(Name = "type", Alias = "t", DescriptionResourceName = nameof(Strings.PolishDataGen.CliGeneratorType))]
-    internal string Type { get; set; }
+    internal string Type { get; set; } = string.Empty;
 
     [CommandLineOption(Name = "output", Alias = "o", DescriptionResourceName = nameof(Strings.PolishDataGen.CliOutputFilePath))]
-    internal string Output { get; set; }
+    internal string Output { get; set; } = string.Empty;
 
     [CommandLineOption(Name = "multithreading", Alias = "mt", DescriptionResourceName = nameof(Strings.PolishDataGen.CliEnableMultithreading))]
     internal bool EnableMultithreading { get; set; }
@@ -43,8 +43,7 @@ internal class PolishDataGeneratorCommandLineTool : ICommandLineTool
             return -1;
         }
 
-        GeneratorType type = GeneratorTypeHelper.ConvertToGeneratorType(Type);
-        IPolishIdGenerator generator = GeneratorFactory.Create(type);
+        IPolishIdGenerator generator = GeneratorFactory.Create(_generatorType);
         var results = new ConcurrentBag<string>();
         var timer = Stopwatch.StartNew();
 
@@ -116,6 +115,8 @@ internal class PolishDataGeneratorCommandLineTool : ICommandLineTool
         => Type switch
         {
             GeneratorType.Pesel => Task.FromResult(new PeselGenerator().CreateMany(count)),
+            GeneratorType.Regon => Task.FromResult(new RegonGenerator().CreateMany(count)),
+            GeneratorType.RegonLong => Task.FromResult(new RegonLongGenerator().CreateMany(count)),
             _ => Task.FromResult(Enumerable.Empty<string>())
         };
 

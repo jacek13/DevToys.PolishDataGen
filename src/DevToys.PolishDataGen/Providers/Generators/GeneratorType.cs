@@ -6,5 +6,6 @@ internal enum GeneratorType
     Pesel,
     Nip,
     Regon,
+    RegonLong,
     PolishIdentityCard
 }
