@@ -28,6 +28,7 @@ public class RegonLongGeneratorTests
     [InlineData(10)]
     [InlineData(50)]
     [InlineData(100)]
+    [InlineData(1000)]
     public void CreateMany_ShouldGenerateValidRegons(int count)
     {
         // Act
@@ -35,14 +36,11 @@ public class RegonLongGeneratorTests
 
         // Assert
         Assert.Equal(count, regons.Count);
-        foreach (var regon in regons)
-        {
-            Assert.True(_validator.IsValid(regon), $"Generated 14-digit REGON '{regon}' should be valid.");
-        }
+        Assert.All(regons, regon => Assert.True(_validator.IsValid(regon), $"Generated 14-digit REGON '{regon}' should be valid."));
     }
 
     [Fact]
-    public void Create_ShouldGenerateUniqueRegons()
+    public void CreateMany_ShouldGenerateUniqueRegons()
     {
         // Act
         var regons = _generator.CreateMany(1000).ToList();

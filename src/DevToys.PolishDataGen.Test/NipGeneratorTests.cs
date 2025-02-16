@@ -28,6 +28,7 @@ public class NipGeneratorTests
     [InlineData(10)]
     [InlineData(50)]
     [InlineData(100)]
+    [InlineData(1000)]
     public void CreateMany_ShouldGenerateValidNips(int count)
     {
         // Act
@@ -39,7 +40,7 @@ public class NipGeneratorTests
     }
 
     [Fact]
-    public void Create_ShouldGenerateUniqueNips()
+    public void CreateMany_ShouldGenerateUniqueNips()
     {
         // Act
         var nips = _generator.CreateMany(1000).ToList();

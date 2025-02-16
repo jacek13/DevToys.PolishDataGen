@@ -28,6 +28,7 @@ public class PeselGeneratorTests
     [InlineData(10)]
     [InlineData(50)]
     [InlineData(100)]
+    [InlineData(1000)]
     public void CreateMany_ShouldGenerateValidPesels(int count)
     {
         // Act
@@ -35,14 +36,11 @@ public class PeselGeneratorTests
 
         // Assert
         Assert.Equal(count, pesels.Count);
-        foreach (var pesel in pesels)
-        {
-            Assert.True(_validator.IsValid(pesel), $"Generated PESEL '{pesel}' should be valid.");
-        }
+        Assert.All(pesels, pesel => Assert.True(_validator.IsValid(pesel), $"Generated PESEL '{pesel}' should be valid."));
     }
 
     [Fact]
-    public void Create_ShouldGenerateUniquePesels()
+    public void CreateMany_ShouldGenerateUniquePesels()
     {
         // Act
         var pesels = _generator.CreateMany(1000).ToList();
