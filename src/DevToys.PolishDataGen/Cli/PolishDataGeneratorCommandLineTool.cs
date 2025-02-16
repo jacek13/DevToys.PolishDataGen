@@ -117,6 +117,7 @@ internal class PolishDataGeneratorCommandLineTool : ICommandLineTool
             GeneratorType.Pesel => Task.FromResult(new PeselGenerator().CreateMany(count)),
             GeneratorType.Regon => Task.FromResult(new RegonGenerator().CreateMany(count)),
             GeneratorType.RegonLong => Task.FromResult(new RegonLongGenerator().CreateMany(count)),
+            GeneratorType.Nip => Task.FromResult(new NipGenerator().CreateMany(count)),
             _ => Task.FromResult(Enumerable.Empty<string>())
         };
 

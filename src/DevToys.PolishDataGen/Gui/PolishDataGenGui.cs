@@ -66,10 +66,11 @@ internal sealed class PolishDataGenGui : IGuiTool
         _dropdownList = SelectDropDownList()
             .AlignHorizontally(UIHorizontalAlignment.Left)
             .WithItems(
+                Item(text: "Nip", value: GeneratorType.Nip),
                 Item(text: "Pesel", value: GeneratorType.Pesel),
                 Item(text: "Regon (9-digit)", value: GeneratorType.Regon),
                 Item(text: "Regon (14-digit)", value: GeneratorType.RegonLong))
-            .Select(0)
+            .Select(1)
             .OnItemSelected(OnGeneratorTypeSelected);
 
         _buttonGenerate = Button()

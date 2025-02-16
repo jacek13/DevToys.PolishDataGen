@@ -10,6 +10,7 @@ internal static class GeneratorFactory
             GeneratorType.Pesel => new PeselGenerator(),
             GeneratorType.Regon => new RegonGenerator(),
             GeneratorType.RegonLong => new RegonLongGenerator(),
+            GeneratorType.Nip => new NipGenerator(),
             _ => throw new NotImplementedException($"Not supported type = {type.ToString()}!"),
         };
 }
