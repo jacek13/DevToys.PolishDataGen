@@ -45,6 +45,7 @@ public class NipValidatorTests
     [InlineData("11!6065846")] // Non-numeric
     [InlineData("0000000000")] // Invalid boundary values
     [InlineData("9999999999")] // Invalid boundary values
+    [InlineData("2709142740")] // Invalid prefix
     [InlineData("1186065845")] // Invalid control digit
     public void IsValid_ShouldReturnFalse_ForInvalidNip(string nip)
     {
