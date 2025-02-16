@@ -10,6 +10,7 @@ internal static class GeneratorTypeHelper
             "pesel" => GeneratorType.Pesel,
             "regon" => GeneratorType.Regon,
             "regon-long" => GeneratorType.RegonLong,
+            "nip" => GeneratorType.Nip,
             _ => GeneratorType.Unknown,
         };
 }

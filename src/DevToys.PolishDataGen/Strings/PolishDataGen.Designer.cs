@@ -178,6 +178,60 @@ namespace DevToys.PolishDataGen.Strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to NIP invalid control number.
+        /// </summary>
+        internal static string NipValidationControlNumberMessage {
+            get {
+                return ResourceManager.GetString("NipValidationControlNumberMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to NIP cannot be composed only from 0 or 9 digits.
+        /// </summary>
+        internal static string NipValidationExtremeValuesMessage {
+            get {
+                return ResourceManager.GetString("NipValidationExtremeValuesMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to NIP must have as a prefix (first 3 digits) the valid tax office number.
+        /// </summary>
+        internal static string NipValidationInvalidPrefix {
+            get {
+                return ResourceManager.GetString("NipValidationInvalidPrefix", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to NIP must be 10 characters long.
+        /// </summary>
+        internal static string NipValidationLengthMessage {
+            get {
+                return ResourceManager.GetString("NipValidationLengthMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to NIP must contain some value.
+        /// </summary>
+        internal static string NipValidationNotEmptyMessage {
+            get {
+                return ResourceManager.GetString("NipValidationNotEmptyMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to NIP must contain only digits.
+        /// </summary>
+        internal static string NipValidationOnlyDigitsMessage {
+            get {
+                return ResourceManager.GetString("NipValidationOnlyDigitsMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to PESEL invalid control number.
         /// </summary>
         internal static string PeselValidationControlNumberMessage {

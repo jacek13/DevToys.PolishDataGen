@@ -156,6 +156,24 @@
   <data name="LongDisplayTitle" xml:space="preserve">
     <value>Polish Data Generator</value>
   </data>
+  <data name="NipValidationControlNumberMessage" xml:space="preserve">
+    <value>NIP invalid control number</value>
+  </data>
+  <data name="NipValidationExtremeValuesMessage" xml:space="preserve">
+    <value>NIP cannot be composed only from 0 or 9 digits</value>
+  </data>
+  <data name="NipValidationInvalidPrefix" xml:space="preserve">
+    <value>NIP must have as a prefix (first 3 digits) the valid tax office number</value>
+  </data>
+  <data name="NipValidationLengthMessage" xml:space="preserve">
+    <value>NIP must be 10 characters long</value>
+  </data>
+  <data name="NipValidationNotEmptyMessage" xml:space="preserve">
+    <value>NIP must contain some value</value>
+  </data>
+  <data name="NipValidationOnlyDigitsMessage" xml:space="preserve">
+    <value>NIP must contain only digits</value>
+  </data>
   <data name="PeselValidationControlNumberMessage" xml:space="preserve">
     <value>PESEL invalid control number</value>
   </data>
