@@ -23,7 +23,7 @@ public class NipGenerator : IPolishIdGenerator
 
     public string Create()
     {
-        var randomPrefixIndex = _random.Next(NipPrefixes.ValidPrefixes.Length);
+        var randomPrefixIndex = _random.Next(NipPrefixes.ValidPrefixes.Length - 1);
         var taxOfficeNumber = NipPrefixes.ValidPrefixes[randomPrefixIndex];
         var serialNumber = _random.Next(0, 999999);
 
