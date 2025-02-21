@@ -11,7 +11,7 @@
     "DevToys CLI": {
       "commandName": "Executable",
       "executablePath": "%DevToysCliDebugEntryPoint%",
-      "commandLineArgs": "pdg --type nip --number 100 -mt",
+      "commandLineArgs": "pdg --type identity-card-number --number 100 -mt",
       "environmentVariables": {
         "EXTRAPLUGIN": "$(TargetDir)"
       }

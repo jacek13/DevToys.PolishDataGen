@@ -11,6 +11,7 @@ internal static class GeneratorTypeHelper
             "regon" => GeneratorType.Regon,
             "regon-long" => GeneratorType.RegonLong,
             "nip" => GeneratorType.Nip,
+            "identity-card-number" => GeneratorType.PolishIdentityCard,
             _ => GeneratorType.Unknown,
         };
 }

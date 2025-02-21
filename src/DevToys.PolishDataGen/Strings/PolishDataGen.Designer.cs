@@ -169,6 +169,60 @@ namespace DevToys.PolishDataGen.Strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to IdentityCardNumber invalid control number.
+        /// </summary>
+        internal static string IdentityCardControlNumberValidationMessage {
+            get {
+                return ResourceManager.GetString("IdentityCardControlNumberValidationMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Identity Card Number cannot be composed only from 0 or 9 digits.
+        /// </summary>
+        internal static string IdentityCardNumberExtremeValuesValidationMessage {
+            get {
+                return ResourceManager.GetString("IdentityCardNumberExtremeValuesValidationMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Identity Card Number must contain some value.
+        /// </summary>
+        internal static string IdentityCardNumberNotEmptyMessage {
+            get {
+                return ResourceManager.GetString("IdentityCardNumberNotEmptyMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Identity Card Number numeric part should contains only digits.
+        /// </summary>
+        internal static string IdentityCardNumberNumericPartValidationMessage {
+            get {
+                return ResourceManager.GetString("IdentityCardNumberNumericPartValidationMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Identity Card Number prefix must contain only upper ascii characters.
+        /// </summary>
+        internal static string IdentityCardNumberPrefixPartValidationMessage {
+            get {
+                return ResourceManager.GetString("IdentityCardNumberPrefixPartValidationMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Identity Card Number must be 9 characters long.
+        /// </summary>
+        internal static string IdentityCardNumberValidationLengthMessage {
+            get {
+                return ResourceManager.GetString("IdentityCardNumberValidationLengthMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Polish Data Generator.
         /// </summary>
         internal static string LongDisplayTitle {
