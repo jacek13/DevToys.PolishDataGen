@@ -7,9 +7,9 @@ public class NipValidator : IPolishIdValidator
 {
     public ushort[] ControlMask { get; } = { 6, 5, 7, 2, 3, 4, 5, 6, 7 };
 
-    private readonly ushort KStartIndex = 9;
+    private const ushort KStartIndex = 9;
 
-    private readonly ushort PrefixStartIndex = 0;
+    private const ushort PrefixStartIndex = 0;
 
     public int CalculateControlNumber(string value)
     {
