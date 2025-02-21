@@ -27,13 +27,20 @@ public class PeselValidator : IPolishIdValidator
 
     public bool IsValid(string value)
     {
-        if (string.IsNullOrWhiteSpace(value)) return false;
-        if (value.Length != 11) return false;
-        if (!value.All(char.IsAsciiDigit)) return false;
-        if (value.All(c => c == '0') || value.All(c => c == '9')) return false;
-        if (!((int.Parse(value.AsSpan(MmStartIndex, 2)) % 20) is > 0 and < 13)) return false;
-        if (!(int.Parse(value.AsSpan(DdStartIndex, 2)) is > 0 and <= 31)) return false;
-        if (CalculateControlNumber(value) != (value[KStartIndex] - '0')) return false;
+        if (string.IsNullOrWhiteSpace(value))
+            return false;
+        if (value.Length != 11)
+            return false;
+        if (!value.All(char.IsAsciiDigit))
+            return false;
+        if (value.All(c => c == '0') || value.All(c => c == '9'))
+            return false;
+        if (!((int.Parse(value.AsSpan(MmStartIndex, 2)) % 20) is > 0 and < 13))
+            return false;
+        if (!(int.Parse(value.AsSpan(DdStartIndex, 2)) is > 0 and <= 31))
+            return false;
+        if (CalculateControlNumber(value) != (value[KStartIndex] - '0'))
+            return false;
 
         return true;
     }
