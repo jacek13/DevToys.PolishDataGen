@@ -11,6 +11,7 @@ internal static class GeneratorFactory
             GeneratorType.Regon => new RegonGenerator(),
             GeneratorType.RegonLong => new RegonLongGenerator(),
             GeneratorType.Nip => new NipGenerator(),
+            GeneratorType.PolishIdentityCard => new IdentityCardNumberGenerator(),
             _ => throw new NotImplementedException($"Not supported type = {type.ToString()}!"),
         };
 }

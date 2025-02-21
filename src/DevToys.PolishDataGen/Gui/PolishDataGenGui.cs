@@ -69,7 +69,8 @@ internal sealed class PolishDataGenGui : IGuiTool
                 Item(text: "Nip", value: GeneratorType.Nip),
                 Item(text: "Pesel", value: GeneratorType.Pesel),
                 Item(text: "Regon (9-digit)", value: GeneratorType.Regon),
-                Item(text: "Regon (14-digit)", value: GeneratorType.RegonLong))
+                Item(text: "Regon (14-digit)", value: GeneratorType.RegonLong),
+                Item(text: "Identity Card Number", value: GeneratorType.PolishIdentityCard))
             .Select(1)
             .OnItemSelected(OnGeneratorTypeSelected);
 
