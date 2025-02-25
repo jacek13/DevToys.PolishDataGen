@@ -1,7 +1,7 @@
-﻿using DevToys.Api;
+﻿using System.ComponentModel.Composition;
+using DevToys.Api;
 using DevToys.PolishDataGen.Interfaces;
 using DevToys.PolishDataGen.Providers.Generators;
-using System.ComponentModel.Composition;
 using static DevToys.Api.GUI;
 
 namespace DevToys.PolishDataGen.Gui;
@@ -42,18 +42,52 @@ internal sealed class PolishDataGenGui : IGuiTool
 
     private int _number = 1;
 
-    public UIToolView View
-        => new UIToolView(
-            Stack()
-                .Vertical()
-                .WithChildren(
-                    _label,
-                    _numberInput,
-                    Stack()
-                        .Horizontal()
-                        .WithChildren(_buttonGenerate, _buttonClearMemory, _dropdownList),
-                    _outputMultiLineText,
-                    _infoBar
+    private enum GridColumn
+    {
+        Stretch,
+    }
+
+    private enum GridRow
+    {
+        Settings,
+        Results,
+    }
+
+    public UIToolView View =>
+        new(
+            isScrollable: true,
+            Grid()
+                .ColumnLargeSpacing()
+                .RowLargeSpacing()
+                .Rows(
+                    (GridRow.Settings, Auto),
+                    (GridRow.Results, new UIGridLength(1, UIGridUnitType.Fraction))
+                )
+                .Columns((GridColumn.Stretch, new UIGridLength(1, UIGridUnitType.Fraction)))
+                .Cells(
+                    Cell(
+                        GridRow.Settings,
+                        GridColumn.Stretch,
+                        Stack()
+                            .Vertical()
+                            .LargeSpacing()
+                            .WithChildren(
+                                _label,
+                                _numberInput,
+                                Stack()
+                                    .Horizontal()
+                                    .WithChildren(
+                                        _buttonGenerate,
+                                        _buttonClearMemory,
+                                        _dropdownList
+                                    )
+                            )
+                    ),
+                    Cell(
+                        GridRow.Results,
+                        GridColumn.Stretch,
+                        _outputMultiLineText.ReadOnly().AlwaysWrap()
+                    )
                 )
         );
 
@@ -70,7 +104,8 @@ internal sealed class PolishDataGenGui : IGuiTool
                 Item(text: "Pesel", value: GeneratorType.Pesel),
                 Item(text: "Regon (9-digit)", value: GeneratorType.Regon),
                 Item(text: "Regon (14-digit)", value: GeneratorType.RegonLong),
-                Item(text: "Identity Card Number", value: GeneratorType.PolishIdentityCard))
+                Item(text: "Identity Card Number", value: GeneratorType.PolishIdentityCard)
+            )
             .Select(1)
             .OnItemSelected(OnGeneratorTypeSelected);
 
