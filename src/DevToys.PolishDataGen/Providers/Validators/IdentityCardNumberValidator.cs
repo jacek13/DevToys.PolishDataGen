@@ -76,9 +76,15 @@ public class IdentityCardNumberValidator : IPolishIdValidator
     private IEnumerable<string> GetValidationMessages(string value)
     {
         if (string.IsNullOrWhiteSpace(value))
+        {
             yield return Strings.PolishDataGen.IdentityCardNumberNotEmptyMessage;
+            yield break;
+        }
         if (value.Length != 9)
+        {
             yield return Strings.PolishDataGen.IdentityCardNumberValidationLengthMessage;
+            yield break;
+        }
         if (!IsTrueForAll(value.AsSpan(KStartIndex, 6), char.IsAsciiDigit))
             yield return Strings.PolishDataGen.IdentityCardNumberNumericPartValidationMessage;
         if (ContainsOnlyExtremeValues(value.AsSpan(KStartIndex, 6)))

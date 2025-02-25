@@ -57,9 +57,15 @@ public class PeselValidator : IPolishIdValidator
     private IEnumerable<string> GetValidationMessages(string value)
     {
         if (string.IsNullOrWhiteSpace(value))
+        {
             yield return Strings.PolishDataGen.PeselValidationNotEmptyMessage;
+            yield break;
+        }
         if (value.Length != 11)
+        {
             yield return Strings.PolishDataGen.PeselValidationLengthMessage;
+            yield break;
+        }
         if (!value.All(char.IsAsciiDigit))
             yield return Strings.PolishDataGen.PeselValidationOnlyDigitsMessage;
         if (value.All(c => c == '0') || value.All(c => c == '9'))

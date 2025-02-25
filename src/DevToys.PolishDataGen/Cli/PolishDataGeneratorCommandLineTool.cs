@@ -1,5 +1,6 @@
 ﻿using DevToys.Api;
 using DevToys.PolishDataGen.Interfaces;
+using DevToys.PolishDataGen.Providers.Common;
 using DevToys.PolishDataGen.Providers.Generators;
 using Microsoft.Extensions.Logging;
 using System.Collections.Concurrent;
@@ -12,13 +13,13 @@ namespace DevToys.PolishDataGen.Cli;
 [Export(typeof(ICommandLineTool))]
 [Name(nameof(PolishDataGeneratorCommandLineTool))]
 [CommandName(
-    Name = "polish-data-gen",
+    Name = "polish-data-generator",
     Alias = "pdg",
     ResourceManagerBaseName = "DevToys.PolishDataGen.Strings.PolishDataGen",
     DescriptionResourceName = nameof(Strings.PolishDataGen.Description))]
 internal class PolishDataGeneratorCommandLineTool : ICommandLineTool
 {
-    [CommandLineOption(Name = "type", Alias = "t", DescriptionResourceName = nameof(Strings.PolishDataGen.CliGeneratorType))]
+    [CommandLineOption(Name = "type", Alias = "t", DescriptionResourceName = nameof(Strings.PolishDataGen.CliIdType))]
     internal string Type { get; set; } = string.Empty;
 
     [CommandLineOption(Name = "output", Alias = "o", DescriptionResourceName = nameof(Strings.PolishDataGen.CliOutputFilePath))]
@@ -30,11 +31,11 @@ internal class PolishDataGeneratorCommandLineTool : ICommandLineTool
     [CommandLineOption(Name = "number", Alias = "n", DescriptionResourceName = nameof(Strings.PolishDataGen.CliNumberPropertyDescription))]
     internal int Number { get; set; }
 
-    private GeneratorType _generatorType { get; set; } = GeneratorType.Unknown;
+    private IdType _idType { get; set; } = IdType.Unknown;
 
     public async ValueTask<int> InvokeAsync(ILogger logger, CancellationToken cancellationToken)
     {
-        _generatorType = GeneratorTypeHelper.ConvertToGeneratorType(Type);
+        _idType = IdTypeHelper.ConvertToIdType(Type);
 
         var errorMessages = ValidateInputs().ToList();
         if (errorMessages.Any())
@@ -43,7 +44,7 @@ internal class PolishDataGeneratorCommandLineTool : ICommandLineTool
             return -1;
         }
 
-        IPolishIdGenerator generator = GeneratorFactory.Create(_generatorType);
+        IPolishIdGenerator generator = GeneratorFactory.Create(_idType);
         var results = new ConcurrentBag<string>();
         var timer = Stopwatch.StartNew();
 
@@ -80,7 +81,7 @@ internal class PolishDataGeneratorCommandLineTool : ICommandLineTool
             var destination = new StringBuilder()
                 .Append(Output)
                 .Append(Output[^1] is '\\' or '/' ? string.Empty : '\\')
-                .AppendFormat("generated-{0}-{1}-", Number, _generatorType.ToString().ToLower())
+                .AppendFormat("generated-{0}-{1}-", Number, _idType.ToString().ToLower())
                 .AppendFormat("in-{0}-ms", timer.ElapsedMilliseconds)
                 .Append(".txt")
                 .ToString();
@@ -98,7 +99,7 @@ internal class PolishDataGeneratorCommandLineTool : ICommandLineTool
 
     private async Task GeneratePart(ConcurrentBag<string> results, int intervalLength)
     {
-        var ids = await GenerateMany(_generatorType, intervalLength);
+        var ids = await GenerateMany(_idType, intervalLength);
         foreach (var id in ids)
         {
             results.Add(id);
@@ -107,18 +108,18 @@ internal class PolishDataGeneratorCommandLineTool : ICommandLineTool
 
     private IEnumerable<string> ValidateInputs()
     {
-        if (_generatorType == GeneratorType.Unknown) yield return $"Property '{nameof(Type)}' is null or unknown type";
+        if (_idType == IdType.Unknown) yield return $"Property '{nameof(Type)}' is null or unknown type";
         if (Number < 1) yield return $"Property '{nameof(Number)}' is less than 1";
     }
 
-    private static Task<IEnumerable<string>> GenerateMany(GeneratorType Type, int count)
+    private static Task<IEnumerable<string>> GenerateMany(IdType Type, int count)
         => Type switch
         {
-            GeneratorType.Pesel => Task.FromResult(new PeselGenerator().CreateMany(count)),
-            GeneratorType.Regon => Task.FromResult(new RegonGenerator().CreateMany(count)),
-            GeneratorType.RegonLong => Task.FromResult(new RegonLongGenerator().CreateMany(count)),
-            GeneratorType.Nip => Task.FromResult(new NipGenerator().CreateMany(count)),
-            GeneratorType.PolishIdentityCard => Task.FromResult(new IdentityCardNumberGenerator().CreateMany(count)),
+            IdType.Pesel => Task.FromResult(new PeselGenerator().CreateMany(count)),
+            IdType.Regon => Task.FromResult(new RegonGenerator().CreateMany(count)),
+            IdType.RegonLong => Task.FromResult(new RegonLongGenerator().CreateMany(count)),
+            IdType.Nip => Task.FromResult(new NipGenerator().CreateMany(count)),
+            IdType.PolishIdentityCard => Task.FromResult(new IdentityCardNumberGenerator().CreateMany(count)),
             _ => Task.FromResult(Enumerable.Empty<string>())
         };
 

@@ -79,11 +79,11 @@ namespace DevToys.PolishDataGen.Strings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Select id generator type. Current available option is: Pesel.
+        ///   Looks up a localized string similar to Select id type. Current available options are: pesel | nip | regon | regon-long | identity-card-number.
         /// </summary>
-        internal static string CliGeneratorType {
+        internal static string CliIdType {
             get {
-                return ResourceManager.GetString("CliGeneratorType", resourceCulture);
+                return ResourceManager.GetString("CliIdType", resourceCulture);
             }
         }
         
@@ -129,6 +129,42 @@ namespace DevToys.PolishDataGen.Strings {
         internal static string CliOutputFilePath {
             get {
                 return ResourceManager.GetString("CliOutputFilePath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The tool allows validation of Polish identification numbers. It is possible to return a short or detailed description (error list)..
+        /// </summary>
+        internal static string CliValidatorDescription {
+            get {
+                return ResourceManager.GetString("CliValidatorDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Displays a detailed list of validation errors.
+        /// </summary>
+        internal static string CliValidatorExtendedDetailsDescription {
+            get {
+                return ResourceManager.GetString("CliValidatorExtendedDetailsDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Input field for value to be checked.
+        /// </summary>
+        internal static string CliValidatorInput {
+            get {
+                return ResourceManager.GetString("CliValidatorInput", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Allows you to return an integer as the result. 1 - True, 0 - False, -1 - Error.
+        /// </summary>
+        internal static string CliValidatorIntegerAsResult {
+            get {
+                return ResourceManager.GetString("CliValidatorIntegerAsResult", resourceCulture);
             }
         }
         

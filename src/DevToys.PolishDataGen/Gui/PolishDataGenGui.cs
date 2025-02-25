@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.Composition;
 using DevToys.Api;
 using DevToys.PolishDataGen.Interfaces;
+using DevToys.PolishDataGen.Providers.Common;
 using DevToys.PolishDataGen.Providers.Generators;
 using static DevToys.Api.GUI;
 
@@ -36,7 +37,7 @@ internal sealed class PolishDataGenGui : IGuiTool
 
     private readonly List<string> _results = new();
 
-    private GeneratorType _generatorType = GeneratorType.Pesel;
+    private IdType _generatorType = IdType.Pesel;
 
     private IPolishIdGenerator _generator;
 
@@ -100,11 +101,11 @@ internal sealed class PolishDataGenGui : IGuiTool
         _dropdownList = SelectDropDownList()
             .AlignHorizontally(UIHorizontalAlignment.Left)
             .WithItems(
-                Item(text: "Nip", value: GeneratorType.Nip),
-                Item(text: "Pesel", value: GeneratorType.Pesel),
-                Item(text: "Regon (9-digit)", value: GeneratorType.Regon),
-                Item(text: "Regon (14-digit)", value: GeneratorType.RegonLong),
-                Item(text: "Identity Card Number", value: GeneratorType.PolishIdentityCard)
+                Item(text: "Nip", value: IdType.Nip),
+                Item(text: "Pesel", value: IdType.Pesel),
+                Item(text: "Regon (9-digit)", value: IdType.Regon),
+                Item(text: "Regon (14-digit)", value: IdType.RegonLong),
+                Item(text: "Identity Card Number", value: IdType.PolishIdentityCard)
             )
             .Select(1)
             .OnItemSelected(OnGeneratorTypeSelected);
@@ -178,7 +179,7 @@ internal sealed class PolishDataGenGui : IGuiTool
 
     private void OnGeneratorTypeSelected(IUIDropDownListItem? uIDropDownListItem)
     {
-        if (uIDropDownListItem?.Value is GeneratorType type)
+        if (uIDropDownListItem?.Value is IdType type)
         {
             _generatorType = type;
         }

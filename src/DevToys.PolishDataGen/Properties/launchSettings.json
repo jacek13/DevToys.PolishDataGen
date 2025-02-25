@@ -1,20 +1,28 @@
 {
   "$schema": "https://json.schemastore.org/launchsettings.json",
-  "profiles": {
-    "DevToys GUI": {
-      "commandName": "Executable",
-      "executablePath": "%DevToysGuiDebugEntryPoint%",
-      "environmentVariables": {
-        "EXTRAPLUGIN": "$(TargetDir)"
-      }
-    },
-    "DevToys CLI": {
-      "commandName": "Executable",
-      "executablePath": "%DevToysCliDebugEntryPoint%",
-      "commandLineArgs": "pdg --type identity-card-number --number 100 -mt",
-      "environmentVariables": {
-        "EXTRAPLUGIN": "$(TargetDir)"
-      }
+    "profiles": {
+        "DevToys GUI": {
+            "commandName": "Executable",
+            "executablePath": "%DevToysGuiDebugEntryPoint%",
+            "environmentVariables": {
+                "EXTRAPLUGIN": "$(TargetDir)"
+            }
+        },
+        "DevToys CLI - generator": {
+            "commandName": "Executable",
+            "executablePath": "%DevToysCliDebugEntryPoint%",
+            "commandLineArgs": "pdg --type identity-card-number --number 100 -mt",
+            "environmentVariables": {
+                "EXTRAPLUGIN": "$(TargetDir)"
+            }
+        },
+        "DevToys CLI - validator": {
+            "commandName": "Executable",
+            "executablePath": "%DevToysCliDebugEntryPoint%",
+            "commandLineArgs": "pdv -t pesel -i 4914436752! -d",
+            "environmentVariables": {
+                "EXTRAPLUGIN": "$(TargetDir)"
+            }
+        }
     }
-  }
 }
