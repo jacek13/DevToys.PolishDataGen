@@ -63,7 +63,10 @@ public class NipValidator : IPolishIdValidator
             yield break;
         }
         if (!value.All(char.IsAsciiDigit))
+        {
             yield return Strings.PolishDataGen.NipValidationOnlyDigitsMessage;
+            yield break;
+        }
         if (value.All(c => c == '0') || value.All(c => c == '9'))
             yield return Strings.PolishDataGen.NipValidationExtremeValuesMessage;
         if (!NipPrefixes.ValidPrefixes.Any(p => p.AsSpan().CompareTo(value.AsSpan(PrefixStartIndex, 3), StringComparison.Ordinal) == 0))

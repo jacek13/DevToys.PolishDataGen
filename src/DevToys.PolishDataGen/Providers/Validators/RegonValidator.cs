@@ -63,7 +63,10 @@ public class RegonValidator : IPolishIdValidator
             yield break;
         }
         if (!value.All(char.IsAsciiDigit))
+        {
             yield return Strings.PolishDataGen.RegonValidationOnlyDigitsMessage;
+            yield break;
+        }
         if (value.All(c => c == '0') || value.All(c => c == '9'))
             yield return Strings.PolishDataGen.RegonValidationExtremeValuesMessage;
         if (CalculateControlNumber(value) != (value[value.Length == 9 ? KStartIndex : KStartIndexLong] - '0'))

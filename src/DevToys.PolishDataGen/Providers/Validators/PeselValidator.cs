@@ -67,7 +67,10 @@ public class PeselValidator : IPolishIdValidator
             yield break;
         }
         if (!value.All(char.IsAsciiDigit))
+        {
             yield return Strings.PolishDataGen.PeselValidationOnlyDigitsMessage;
+            yield break;
+        }
         if (value.All(c => c == '0') || value.All(c => c == '9'))
             yield return Strings.PolishDataGen.PeselValidationExtremeValuesMessage;
         if (!((int.Parse(value.AsSpan(MmStartIndex, 2)) % 20) is > 0 and < 13))
