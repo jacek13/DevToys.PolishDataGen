@@ -8,7 +8,7 @@ using static DevToys.Api.GUI;
 namespace DevToys.PolishDataGen.Gui;
 
 [Export(typeof(IGuiTool))]
-[Name("PolishDataGen")]
+[Name(nameof(PolishDataGeneratorGui))]
 [ToolDisplayInformation(
     IconFontName = "FluentSystemIcons",
     IconGlyph = '\uE8EF',
@@ -19,7 +19,7 @@ namespace DevToys.PolishDataGen.Gui;
     LongDisplayTitleResourceName = nameof(Strings.PolishDataGen.LongDisplayTitle),
     DescriptionResourceName = nameof(Strings.PolishDataGen.Description),
     AccessibleNameResourceName = nameof(Strings.PolishDataGen.AccessibleName))]
-internal sealed class PolishDataGenGui : IGuiTool
+internal sealed class PolishDataGeneratorGui : IGuiTool
 {
     private readonly IUILabel _label;
 
@@ -92,7 +92,7 @@ internal sealed class PolishDataGenGui : IGuiTool
                 )
         );
 
-    public PolishDataGenGui()
+    public PolishDataGeneratorGui()
     {
         _label = Label()
             .Style(UILabelStyle.BodyStrong)
@@ -112,6 +112,7 @@ internal sealed class PolishDataGenGui : IGuiTool
 
         _buttonGenerate = Button()
             .Text(Strings.PolishDataGen.GuiGenerateButtonLabel)
+            .AccentAppearance()
             .OnClick(OnGeneratePressed);
 
         _buttonClearMemory = Button()
