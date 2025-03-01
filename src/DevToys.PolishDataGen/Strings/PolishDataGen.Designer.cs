@@ -205,6 +205,87 @@ namespace DevToys.PolishDataGen.Strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Validate.
+        /// </summary>
+        internal static string GuiValidateButtonLabel {
+            get {
+                return ResourceManager.GetString("GuiValidateButtonLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Allows validation of Polish identification numbers. .
+        /// </summary>
+        internal static string GuiValidationDescription {
+            get {
+                return ResourceManager.GetString("GuiValidationDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Validation error.
+        /// </summary>
+        internal static string GuiValidationErrorTitle {
+            get {
+                return ResourceManager.GetString("GuiValidationErrorTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Polish ids validation.
+        /// </summary>
+        internal static string GuiValidationLongDisplayTitle {
+            get {
+                return ResourceManager.GetString("GuiValidationLongDisplayTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select validation type.
+        /// </summary>
+        internal static string GuiValidationSelectTypeLabel {
+            get {
+                return ResourceManager.GetString("GuiValidationSelectTypeLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Polish Data Validation.
+        /// </summary>
+        internal static string GuiValidationShortDisplayTitle {
+            get {
+                return ResourceManager.GetString("GuiValidationShortDisplayTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Success.
+        /// </summary>
+        internal static string GuiValidationSuccessTitle {
+            get {
+                return ResourceManager.GetString("GuiValidationSuccessTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter id.
+        /// </summary>
+        internal static string GuiValidationTextInputLabel {
+            get {
+                return ResourceManager.GetString("GuiValidationTextInputLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Validators.
+        /// </summary>
+        internal static string GuiValidatorsGroupDisplayTitle {
+            get {
+                return ResourceManager.GetString("GuiValidatorsGroupDisplayTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to IdentityCardNumber invalid control number.
         /// </summary>
         internal static string IdentityCardControlNumberValidationMessage {

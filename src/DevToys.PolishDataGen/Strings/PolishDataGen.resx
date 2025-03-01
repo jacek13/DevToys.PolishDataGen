@@ -165,6 +165,33 @@
   <data name="GuiNumberInputLabel" xml:space="preserve">
     <value>Number of data to generate</value>
   </data>
+  <data name="GuiValidateButtonLabel" xml:space="preserve">
+    <value>Validate</value>
+  </data>
+  <data name="GuiValidationDescription" xml:space="preserve">
+    <value>Allows validation of Polish identification numbers. </value>
+  </data>
+  <data name="GuiValidationErrorTitle" xml:space="preserve">
+    <value>Validation error</value>
+  </data>
+  <data name="GuiValidationLongDisplayTitle" xml:space="preserve">
+    <value>Polish ids validation</value>
+  </data>
+  <data name="GuiValidationSelectTypeLabel" xml:space="preserve">
+    <value>Select validation type</value>
+  </data>
+  <data name="GuiValidationShortDisplayTitle" xml:space="preserve">
+    <value>Polish Data Validation</value>
+  </data>
+  <data name="GuiValidationSuccessTitle" xml:space="preserve">
+    <value>Success</value>
+  </data>
+  <data name="GuiValidationTextInputLabel" xml:space="preserve">
+    <value>Enter id</value>
+  </data>
+  <data name="GuiValidatorsGroupDisplayTitle" xml:space="preserve">
+    <value>Validators</value>
+  </data>
   <data name="IdentityCardControlNumberValidationMessage" xml:space="preserve">
     <value>IdentityCardNumber invalid control number</value>
   </data>
