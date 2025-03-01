@@ -1,6 +1,6 @@
-﻿namespace DevToys.PolishDataGen.Providers.Generators;
+﻿namespace DevToys.PolishDataGen.Providers.Common;
 
-internal enum GeneratorType
+internal enum IdType
 {
     Unknown,
     Pesel,

@@ -53,11 +53,20 @@ public class RegonValidator : IPolishIdValidator
     private IEnumerable<string> GetValidationMessages(string value)
     {
         if (string.IsNullOrWhiteSpace(value))
+        {
             yield return Strings.PolishDataGen.RegonValidationNotEmptyMessage;
+            yield break;
+        }
         if (value.Length != 9 && value.Length != 14)
+        {
             yield return Strings.PolishDataGen.RegonValidationLengthMessage;
+            yield break;
+        }
         if (!value.All(char.IsAsciiDigit))
+        {
             yield return Strings.PolishDataGen.RegonValidationOnlyDigitsMessage;
+            yield break;
+        }
         if (value.All(c => c == '0') || value.All(c => c == '9'))
             yield return Strings.PolishDataGen.RegonValidationExtremeValuesMessage;
         if (CalculateControlNumber(value) != (value[value.Length == 9 ? KStartIndex : KStartIndexLong] - '0'))

@@ -1,13 +1,14 @@
 ﻿using System.ComponentModel.Composition;
 using DevToys.Api;
 using DevToys.PolishDataGen.Interfaces;
+using DevToys.PolishDataGen.Providers.Common;
 using DevToys.PolishDataGen.Providers.Generators;
 using static DevToys.Api.GUI;
 
 namespace DevToys.PolishDataGen.Gui;
 
 [Export(typeof(IGuiTool))]
-[Name("PolishDataGen")]
+[Name(nameof(PolishDataGeneratorGui))]
 [ToolDisplayInformation(
     IconFontName = "FluentSystemIcons",
     IconGlyph = '\uE8EF',
@@ -18,7 +19,7 @@ namespace DevToys.PolishDataGen.Gui;
     LongDisplayTitleResourceName = nameof(Strings.PolishDataGen.LongDisplayTitle),
     DescriptionResourceName = nameof(Strings.PolishDataGen.Description),
     AccessibleNameResourceName = nameof(Strings.PolishDataGen.AccessibleName))]
-internal sealed class PolishDataGenGui : IGuiTool
+internal sealed class PolishDataGeneratorGui : IGuiTool
 {
     private readonly IUILabel _label;
 
@@ -36,7 +37,7 @@ internal sealed class PolishDataGenGui : IGuiTool
 
     private readonly List<string> _results = new();
 
-    private GeneratorType _generatorType = GeneratorType.Pesel;
+    private IdType _generatorType = IdType.Pesel;
 
     private IPolishIdGenerator _generator;
 
@@ -91,7 +92,7 @@ internal sealed class PolishDataGenGui : IGuiTool
                 )
         );
 
-    public PolishDataGenGui()
+    public PolishDataGeneratorGui()
     {
         _label = Label()
             .Style(UILabelStyle.BodyStrong)
@@ -100,17 +101,18 @@ internal sealed class PolishDataGenGui : IGuiTool
         _dropdownList = SelectDropDownList()
             .AlignHorizontally(UIHorizontalAlignment.Left)
             .WithItems(
-                Item(text: "Nip", value: GeneratorType.Nip),
-                Item(text: "Pesel", value: GeneratorType.Pesel),
-                Item(text: "Regon (9-digit)", value: GeneratorType.Regon),
-                Item(text: "Regon (14-digit)", value: GeneratorType.RegonLong),
-                Item(text: "Identity Card Number", value: GeneratorType.PolishIdentityCard)
+                Item(text: "Nip", value: IdType.Nip),
+                Item(text: "Pesel", value: IdType.Pesel),
+                Item(text: "Regon (9-digit)", value: IdType.Regon),
+                Item(text: "Regon (14-digit)", value: IdType.RegonLong),
+                Item(text: "Identity Card Number", value: IdType.PolishIdentityCard)
             )
             .Select(1)
             .OnItemSelected(OnGeneratorTypeSelected);
 
         _buttonGenerate = Button()
             .Text(Strings.PolishDataGen.GuiGenerateButtonLabel)
+            .AccentAppearance()
             .OnClick(OnGeneratePressed);
 
         _buttonClearMemory = Button()
@@ -178,7 +180,7 @@ internal sealed class PolishDataGenGui : IGuiTool
 
     private void OnGeneratorTypeSelected(IUIDropDownListItem? uIDropDownListItem)
     {
-        if (uIDropDownListItem?.Value is GeneratorType type)
+        if (uIDropDownListItem?.Value is IdType type)
         {
             _generatorType = type;
         }

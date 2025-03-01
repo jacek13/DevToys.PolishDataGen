@@ -79,11 +79,11 @@ namespace DevToys.PolishDataGen.Strings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Select id generator type. Current available option is: Pesel.
+        ///   Looks up a localized string similar to Select id type. Current available options are: pesel | nip | regon | regon-long | identity-card-number.
         /// </summary>
-        internal static string CliGeneratorType {
+        internal static string CliIdType {
             get {
-                return ResourceManager.GetString("CliGeneratorType", resourceCulture);
+                return ResourceManager.GetString("CliIdType", resourceCulture);
             }
         }
         
@@ -133,6 +133,42 @@ namespace DevToys.PolishDataGen.Strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The tool allows validation of Polish identification numbers. It is possible to return a short or detailed description (error list)..
+        /// </summary>
+        internal static string CliValidatorDescription {
+            get {
+                return ResourceManager.GetString("CliValidatorDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Displays a detailed list of validation errors.
+        /// </summary>
+        internal static string CliValidatorExtendedDetailsDescription {
+            get {
+                return ResourceManager.GetString("CliValidatorExtendedDetailsDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Input field for value to be checked.
+        /// </summary>
+        internal static string CliValidatorInput {
+            get {
+                return ResourceManager.GetString("CliValidatorInput", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Allows you to return an integer as the result. 1 - True, 0 - False, -1 - Error.
+        /// </summary>
+        internal static string CliValidatorIntegerAsResult {
+            get {
+                return ResourceManager.GetString("CliValidatorIntegerAsResult", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Library for generating correct Polish identifiers: PESEL, NIP, REGON and more. Perfect for testing and validating systems..
         /// </summary>
         internal static string Description {
@@ -165,6 +201,87 @@ namespace DevToys.PolishDataGen.Strings {
         internal static string GuiNumberInputLabel {
             get {
                 return ResourceManager.GetString("GuiNumberInputLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Validate.
+        /// </summary>
+        internal static string GuiValidateButtonLabel {
+            get {
+                return ResourceManager.GetString("GuiValidateButtonLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Allows validation of Polish identification numbers. .
+        /// </summary>
+        internal static string GuiValidationDescription {
+            get {
+                return ResourceManager.GetString("GuiValidationDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Validation error.
+        /// </summary>
+        internal static string GuiValidationErrorTitle {
+            get {
+                return ResourceManager.GetString("GuiValidationErrorTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Polish ids validation.
+        /// </summary>
+        internal static string GuiValidationLongDisplayTitle {
+            get {
+                return ResourceManager.GetString("GuiValidationLongDisplayTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select validation type.
+        /// </summary>
+        internal static string GuiValidationSelectTypeLabel {
+            get {
+                return ResourceManager.GetString("GuiValidationSelectTypeLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Polish Data Validation.
+        /// </summary>
+        internal static string GuiValidationShortDisplayTitle {
+            get {
+                return ResourceManager.GetString("GuiValidationShortDisplayTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Success.
+        /// </summary>
+        internal static string GuiValidationSuccessTitle {
+            get {
+                return ResourceManager.GetString("GuiValidationSuccessTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter id.
+        /// </summary>
+        internal static string GuiValidationTextInputLabel {
+            get {
+                return ResourceManager.GetString("GuiValidationTextInputLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Validators.
+        /// </summary>
+        internal static string GuiValidatorsGroupDisplayTitle {
+            get {
+                return ResourceManager.GetString("GuiValidatorsGroupDisplayTitle", resourceCulture);
             }
         }
         
