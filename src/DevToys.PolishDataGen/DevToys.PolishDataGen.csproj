@@ -4,6 +4,15 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+	<IsPackable>true</IsPackable>
+	<Version>1.0.0</Version>
+	<Title>DevToys Polish Data Generator</Title>
+	<Description>Enables generation and validation of Polish identification numbers.</Description>
+	<PackageId>DevToys.PolishDataGen</PackageId>
+	<PackageProjectUrl>https://github.com/jacek13/DevToys.PolishDataGen</PackageProjectUrl>
+	<RepositoryUrl>https://github.com/jacek13/DevToys.PolishDataGen</RepositoryUrl>
+	<Authors>Michał Jackowski</Authors>
+	<PackageTags>devtoys-app, csharp, extension</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,6 +22,11 @@
   <ItemGroup>
     <Folder Include="Helpers\" />
     <Folder Include="Properties\" />
+  </ItemGroup>
+
+  <ItemGroup>
+	  <None Include="..\..\LICENSE" Link="docs\LICENSE" Pack="true" PackagePath="\" />
+	  <None Include="..\..\README.md" Link="docs\README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
 
   <ItemGroup>
