@@ -46,10 +46,10 @@ internal class PolishDataValidatorGui : IGuiTool
             .AlignHorizontally(UIHorizontalAlignment.Left)
             .Title(Strings.PolishDataGen.GuiValidationSelectTypeLabel)
             .WithItems(
-                Item(text: "Nip", value: IdType.Nip),
-                Item(text: "Pesel", value: IdType.Pesel),
-                Item(text: "Regon", value: IdType.Regon),
-                Item(text: "Identity Card Number", value: IdType.PolishIdentityCard)
+                Item(text: Strings.PolishDataGen.GuiIdTypeNip, value: IdType.Nip),
+                Item(text: Strings.PolishDataGen.GuiIdTypePesel, value: IdType.Pesel),
+                Item(text: Strings.PolishDataGen.GuiIdTypeRegon, value: IdType.Regon),
+                Item(text: Strings.PolishDataGen.GuiIdTypeIdentityCardNumber, value: IdType.PolishIdentityCard)
             )
             .Select(1)
             .OnItemSelected(OnValidatorTypeSelected);
@@ -82,7 +82,7 @@ internal class PolishDataValidatorGui : IGuiTool
                 InfoBar()
                     .Success()
                     .Title(Strings.PolishDataGen.GuiValidationSuccessTitle)
-                    .Description($"'{text}' is valid")
+                    .Description($"'{text}' {Strings.PolishDataGen.GuiValidationIsValidLabel}")
                     .Open()
             );
         }
@@ -93,7 +93,7 @@ internal class PolishDataValidatorGui : IGuiTool
                     InfoBar()
                         .Error()
                         .Title(Strings.PolishDataGen.GuiValidationErrorTitle)
-                        .Description($"'{text}' is invalid: {error}")
+                        .Description($"'{text}' {Strings.PolishDataGen.GuiValidationIsInvalidLabel}: {error}")
                         .Open()
                 )
                 .ToArray();

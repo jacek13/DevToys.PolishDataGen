@@ -17,7 +17,7 @@ namespace DevToys.PolishDataGen.Gui;
     ResourceManagerBaseName = "DevToys.PolishDataGen.Strings.PolishDataGen",
     ShortDisplayTitleResourceName = nameof(Strings.PolishDataGen.ShortDisplayTitle),
     LongDisplayTitleResourceName = nameof(Strings.PolishDataGen.LongDisplayTitle),
-    DescriptionResourceName = nameof(Strings.PolishDataGen.Description),
+    DescriptionResourceName = nameof(Strings.PolishDataGen.GuiGeneratorDescription),
     AccessibleNameResourceName = nameof(Strings.PolishDataGen.AccessibleName))]
 internal sealed class PolishDataGeneratorGui : IGuiTool
 {
@@ -81,7 +81,8 @@ internal sealed class PolishDataGeneratorGui : IGuiTool
                                         _buttonGenerate,
                                         _buttonClearMemory,
                                         _dropdownList
-                                    )
+                                    ),
+                                _infoBar
                             )
                     ),
                     Cell(
@@ -101,11 +102,11 @@ internal sealed class PolishDataGeneratorGui : IGuiTool
         _dropdownList = SelectDropDownList()
             .AlignHorizontally(UIHorizontalAlignment.Left)
             .WithItems(
-                Item(text: "Nip", value: IdType.Nip),
-                Item(text: "Pesel", value: IdType.Pesel),
-                Item(text: "Regon (9-digit)", value: IdType.Regon),
-                Item(text: "Regon (14-digit)", value: IdType.RegonLong),
-                Item(text: "Identity Card Number", value: IdType.PolishIdentityCard)
+                Item(text: Strings.PolishDataGen.GuiIdTypeNip, value: IdType.Nip),
+                Item(text: Strings.PolishDataGen.GuiIdTypePesel, value: IdType.Pesel),
+                Item(text: Strings.PolishDataGen.GuiIdTypeRegon, value: IdType.Regon),
+                Item(text: Strings.PolishDataGen.GuiIdTypeRegonLong, value: IdType.RegonLong),
+                Item(text: Strings.PolishDataGen.GuiIdTypeIdentityCardNumber, value: IdType.PolishIdentityCard)
             )
             .Select(1)
             .OnItemSelected(OnGeneratorTypeSelected);
@@ -172,9 +173,13 @@ internal sealed class PolishDataGeneratorGui : IGuiTool
     private void OnNumberChanged(double value)
     {
         _number = Convert.ToInt32(value);
-        if (_number >= 100_000)
+        if (_number >= 250_000)
         {
             _infoBar.Open();
+        }
+        else 
+        {
+            _infoBar.Close();
         }
     }
 

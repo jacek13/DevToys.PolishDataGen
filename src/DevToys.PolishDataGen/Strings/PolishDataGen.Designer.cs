@@ -196,6 +196,60 @@ namespace DevToys.PolishDataGen.Strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Allows generation of Polish identifiers: PESEL, NIP, REGON and more. Perfect for testing and validating systems..
+        /// </summary>
+        internal static string GuiGeneratorDescription {
+            get {
+                return ResourceManager.GetString("GuiGeneratorDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Identity Card Number.
+        /// </summary>
+        internal static string GuiIdTypeIdentityCardNumber {
+            get {
+                return ResourceManager.GetString("GuiIdTypeIdentityCardNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to NIP.
+        /// </summary>
+        internal static string GuiIdTypeNip {
+            get {
+                return ResourceManager.GetString("GuiIdTypeNip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PESEL.
+        /// </summary>
+        internal static string GuiIdTypePesel {
+            get {
+                return ResourceManager.GetString("GuiIdTypePesel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to REGON (9 digits).
+        /// </summary>
+        internal static string GuiIdTypeRegon {
+            get {
+                return ResourceManager.GetString("GuiIdTypeRegon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to REGON (14 digits).
+        /// </summary>
+        internal static string GuiIdTypeRegonLong {
+            get {
+                return ResourceManager.GetString("GuiIdTypeRegonLong", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Number of data to generate.
         /// </summary>
         internal static string GuiNumberInputLabel {
@@ -228,6 +282,24 @@ namespace DevToys.PolishDataGen.Strings {
         internal static string GuiValidationErrorTitle {
             get {
                 return ResourceManager.GetString("GuiValidationErrorTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to is invalid.
+        /// </summary>
+        internal static string GuiValidationIsInvalidLabel {
+            get {
+                return ResourceManager.GetString("GuiValidationIsInvalidLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to is valid.
+        /// </summary>
+        internal static string GuiValidationIsValidLabel {
+            get {
+                return ResourceManager.GetString("GuiValidationIsValidLabel", resourceCulture);
             }
         }
         
@@ -273,15 +345,6 @@ namespace DevToys.PolishDataGen.Strings {
         internal static string GuiValidationTextInputLabel {
             get {
                 return ResourceManager.GetString("GuiValidationTextInputLabel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Validators.
-        /// </summary>
-        internal static string GuiValidatorsGroupDisplayTitle {
-            get {
-                return ResourceManager.GetString("GuiValidatorsGroupDisplayTitle", resourceCulture);
             }
         }
         

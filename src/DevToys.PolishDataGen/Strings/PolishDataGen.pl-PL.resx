@@ -118,55 +118,55 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AccessibleName" xml:space="preserve">
-    <value>Allows generation of PESEL, NIP, REGON</value>
+    <value>Umożliwia generowanie PESEL, NIP, REGON</value>
   </data>
   <data name="CliEnableMultithreading" xml:space="preserve">
-    <value>when enabled app will run k = 1 + 3.3 * Log10(Number) jobs</value>
+    <value>Po włączeniu aplikacja uruchomi k = 1 + 3.3 * Log10(LICZBA_IDENTYFIKATORÓW) zadań</value>
   </data>
   <data name="CliIdType" xml:space="preserve">
-    <value>Select id type. Current available options are: pesel | nip | regon | regon-long | identity-card-number</value>
+    <value>Wybierz typ identyfikatora. Aktualnie dostępne opcje to: pesel | nip | regon | regon-long | identity-card-number</value>
   </data>
   <data name="CliInfoBarContent" xml:space="preserve">
-    <value>With such large numbers it is recommended to use the CLI version</value>
+    <value>Przy tak dużych liczbach zaleca się korzystanie z wersji CLI</value>
   </data>
   <data name="CliInfoBarTitle" xml:space="preserve">
-    <value>Warning</value>
+    <value>Ostrzeżenie</value>
   </data>
   <data name="CliMultiLineTextInputTitle" xml:space="preserve">
-    <value>Output</value>
+    <value>Wyjście</value>
   </data>
   <data name="CliNumberPropertyDescription" xml:space="preserve">
-    <value>Defines the number of data to be generated</value>
+    <value>Określa liczbę danych do wygenerowania</value>
   </data>
   <data name="CliOutputFilePath" xml:space="preserve">
-    <value>define output file path</value>
+    <value>Określa ścieżkę pliku wyjściowego</value>
   </data>
   <data name="CliValidatorDescription" xml:space="preserve">
-    <value>The tool allows validation of Polish identification numbers. It is possible to return a short or detailed description (error list).</value>
+    <value>Narzędzie umożliwia walidację polskich numerów identyfikacyjnych. Możliwe jest zwrócenie krótkiego lub szczegółowego opisu (lista błędów).</value>
   </data>
   <data name="CliValidatorExtendedDetailsDescription" xml:space="preserve">
-    <value>Displays a detailed list of validation errors</value>
+    <value>Wyświetla szczegółową listę błędów walidacji</value>
   </data>
   <data name="CliValidatorInput" xml:space="preserve">
-    <value>Input field for value to be checked</value>
+    <value>Wartość wejściowa do sprawdzenia</value>
   </data>
   <data name="CliValidatorIntegerAsResult" xml:space="preserve">
-    <value>Allows you to return an integer as the result. 1 - True, 0 - False, -1 - Error</value>
+    <value>Umożliwia zwrócenie liczby całkowitej jako wyniku. 1 - Prawda, 0 - Fałsz, -1 - Błąd</value>
   </data>
   <data name="Description" xml:space="preserve">
-    <value>Library for generating correct Polish identifiers: PESEL, NIP, REGON and more. Perfect for testing and validating systems.</value>
+    <value>Biblioteka do generowania poprawnych polskich identyfikatorów: PESEL, NIP, REGON i inne. Idealna do testowania i walidacji systemów.</value>
   </data>
   <data name="GuiClearMemoryButtonLabel" xml:space="preserve">
-    <value>Clear memory</value>
+    <value>Wyczyść pamięć</value>
   </data>
   <data name="GuiGenerateButtonLabel" xml:space="preserve">
-    <value>Generate</value>
+    <value>Generuj</value>
   </data>
   <data name="GuiGeneratorDescription" xml:space="preserve">
-    <value>Allows generation of Polish identifiers: PESEL, NIP, REGON and more. Perfect for testing and validating systems.</value>
+    <value>Umożliwia generowanie polskich identyfikatorów: PESEL, NIP, REGON i innych.</value>
   </data>
   <data name="GuiIdTypeIdentityCardNumber" xml:space="preserve">
-    <value>Identity Card Number</value>
+    <value>Numer dowodu osobistego</value>
   </data>
   <data name="GuiIdTypeNip" xml:space="preserve">
     <value>NIP</value>
@@ -175,123 +175,123 @@
     <value>PESEL</value>
   </data>
   <data name="GuiIdTypeRegon" xml:space="preserve">
-    <value>REGON (9 digits)</value>
+    <value>REGON (9 cyfr)</value>
   </data>
   <data name="GuiIdTypeRegonLong" xml:space="preserve">
-    <value>REGON (14 digits)</value>
+    <value>REGON (14 cyfr)</value>
   </data>
   <data name="GuiNumberInputLabel" xml:space="preserve">
-    <value>Number of data to generate</value>
+    <value>Liczba danych do wygenerowania</value>
   </data>
   <data name="GuiValidateButtonLabel" xml:space="preserve">
-    <value>Validate</value>
+    <value>Waliduj</value>
   </data>
   <data name="GuiValidationDescription" xml:space="preserve">
-    <value>Allows validation of Polish identification numbers. </value>
+    <value>Umożliwia walidację polskich numerów identyfikacyjnych. </value>
   </data>
   <data name="GuiValidationErrorTitle" xml:space="preserve">
-    <value>Validation error</value>
+    <value>Błąd walidacji</value>
   </data>
   <data name="GuiValidationIsInvalidLabel" xml:space="preserve">
-    <value>is invalid</value>
+    <value>jest nieprawidłowy</value>
   </data>
   <data name="GuiValidationIsValidLabel" xml:space="preserve">
-    <value>is valid</value>
+    <value>jest prawidłowy</value>
   </data>
   <data name="GuiValidationLongDisplayTitle" xml:space="preserve">
-    <value>Polish ids validation</value>
+    <value>Walidacja polskich danych</value>
   </data>
   <data name="GuiValidationSelectTypeLabel" xml:space="preserve">
-    <value>Select validation type</value>
+    <value>Wybierz typ walidacji</value>
   </data>
   <data name="GuiValidationShortDisplayTitle" xml:space="preserve">
-    <value>Polish Data Validation</value>
+    <value>Walidacja polskich danych</value>
   </data>
   <data name="GuiValidationSuccessTitle" xml:space="preserve">
-    <value>Success</value>
+    <value>Sukces</value>
   </data>
   <data name="GuiValidationTextInputLabel" xml:space="preserve">
-    <value>Enter id</value>
+    <value>Wprowadź identyfikator</value>
   </data>
   <data name="IdentityCardControlNumberValidationMessage" xml:space="preserve">
-    <value>IdentityCardNumber invalid control number</value>
+    <value>Numer dowodu osobistego posiada nieprawidłowy numer kontrolny</value>
   </data>
   <data name="IdentityCardNumberExtremeValuesValidationMessage" xml:space="preserve">
-    <value>Identity Card Number cannot be composed only from 0 or 9 digits</value>
+    <value>Numer dowodu osobistego nie może składać się wyłącznie z cyfr 0 lub 9.</value>
   </data>
   <data name="IdentityCardNumberNotEmptyMessage" xml:space="preserve">
-    <value>Identity Card Number must contain some value</value>
+    <value>Numer dowodu osobistego musi zawierać jakąś wartość</value>
   </data>
   <data name="IdentityCardNumberNumericPartValidationMessage" xml:space="preserve">
-    <value>Identity Card Number numeric part should contains only digits</value>
+    <value>Numer dowodu osobistego w części numerycznej powinien zawierać wyłącznie cyfry</value>
   </data>
   <data name="IdentityCardNumberPrefixPartValidationMessage" xml:space="preserve">
-    <value>Identity Card Number prefix must contain only upper ascii characters</value>
+    <value>Numer dowodu osobistego w prefiksie musi zawierać wielkie litery</value>
   </data>
   <data name="IdentityCardNumberValidationLengthMessage" xml:space="preserve">
-    <value>Identity Card Number must be 9 characters long</value>
+    <value>Numer dowodu osobistego musi składać się z 9 znaków</value>
   </data>
   <data name="LongDisplayTitle" xml:space="preserve">
-    <value>Polish Data Generator</value>
+    <value>Generator polskich danych</value>
   </data>
   <data name="NipValidationControlNumberMessage" xml:space="preserve">
-    <value>NIP invalid control number</value>
+    <value>NIP posiada nieprawidłowy numer kontrolny</value>
   </data>
   <data name="NipValidationExtremeValuesMessage" xml:space="preserve">
-    <value>NIP cannot be composed only from 0 or 9 digits</value>
+    <value>NIP nie może składać się tylko z cyfr 0 lub 9</value>
   </data>
   <data name="NipValidationInvalidPrefix" xml:space="preserve">
-    <value>NIP must have as a prefix (first 3 digits) the valid tax office number</value>
+    <value>NIP musi mieć jako prefiks (pierwsze 3 cyfry) istniejący numer urzędu skarbowego</value>
   </data>
   <data name="NipValidationLengthMessage" xml:space="preserve">
-    <value>NIP must be 10 characters long</value>
+    <value>NIP musi składać się z 10 znaków</value>
   </data>
   <data name="NipValidationNotEmptyMessage" xml:space="preserve">
-    <value>NIP must contain some value</value>
+    <value>NIP musi zawierać jakąś wartość</value>
   </data>
   <data name="NipValidationOnlyDigitsMessage" xml:space="preserve">
-    <value>NIP must contain only digits</value>
+    <value>NIP musi składać się wyłącznie z cyfr</value>
   </data>
   <data name="PeselValidationControlNumberMessage" xml:space="preserve">
-    <value>PESEL invalid control number</value>
+    <value>PESEL posiada nieprawidłowy numer kontrolny</value>
   </data>
   <data name="PeselValidationDayRangeMessage" xml:space="preserve">
-    <value>PESEL Day part must be in range 1 to 31</value>
+    <value>PESEL część zarezerwowana dla dni DD musi mieścić się w zakresie od 1 do 31</value>
   </data>
   <data name="PeselValidationExtremeValuesMessage" xml:space="preserve">
-    <value>PESEL cannot be composed only from 0 or 9 digits</value>
+    <value>PESEL nie może składać się tylko z cyfr 0 lub 9</value>
   </data>
   <data name="PeselValidationLengthMessage" xml:space="preserve">
-    <value>PESEL must be 11 characters long</value>
+    <value>PESEL musi składać się z 11 znaków</value>
   </data>
   <data name="PeselValidationMonthRangeMessage" xml:space="preserve">
-    <value>PESEL Month part must be in range 1 to 12</value>
+    <value>PESEL część zarezerwowana dla miesięcy MM musi mieścić się w zakresie od 1 do 12</value>
   </data>
   <data name="PeselValidationNotEmptyMessage" xml:space="preserve">
-    <value>PESEL must contain some value</value>
+    <value>PESEL musi zawierać jakąś wartość</value>
   </data>
   <data name="PeselValidationOnlyDigitsMessage" xml:space="preserve">
-    <value>PESEL must contain only digits</value>
+    <value>PESEL musi składać się wyłącznie z cyfr</value>
   </data>
   <data name="PolishDataGenLabel" xml:space="preserve">
-    <value>Generate Polish IDs</value>
+    <value>Generuj polskie identyfikatory</value>
   </data>
   <data name="RegonValidationControlNumberMessage" xml:space="preserve">
-    <value>REGON invalid control number</value>
+    <value>REGON posiada nieprawidłowy numer kontrolny</value>
   </data>
   <data name="RegonValidationExtremeValuesMessage" xml:space="preserve">
-    <value>REGON cannot be composed only from 0 or 9 digits</value>
+    <value>REGON nie może składać się tylko z cyfr 0 lub 9</value>
   </data>
   <data name="RegonValidationLengthMessage" xml:space="preserve">
-    <value>REGON must be 9 or 14 characters long</value>
+    <value>REGON musi składać się z 9 lub 14 znaków</value>
   </data>
   <data name="RegonValidationNotEmptyMessage" xml:space="preserve">
-    <value>REGON must contain some value</value>
+    <value>REGON musi zawierać jakąś wartość</value>
   </data>
   <data name="RegonValidationOnlyDigitsMessage" xml:space="preserve">
-    <value>REGON must contain only digits</value>
+    <value>REGON musi składać się wyłącznie z cyfr</value>
   </data>
   <data name="ShortDisplayTitle" xml:space="preserve">
-    <value>Polish Data Gen</value>
+    <value>Generator polskich danych</value>
   </data>
 </root>
