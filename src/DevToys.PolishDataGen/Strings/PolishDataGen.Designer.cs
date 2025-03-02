@@ -160,7 +160,7 @@ namespace DevToys.PolishDataGen.Strings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Allows you to return an integer as the result. 1 - True, 0 - False, -1 - Error.
+        ///   Looks up a localized string similar to Allows you to return an integer as the result. 0 - True, -1 - Error/False.
         /// </summary>
         internal static string CliValidatorIntegerAsResult {
             get {

@@ -151,7 +151,7 @@
     <value>Input field for value to be checked</value>
   </data>
   <data name="CliValidatorIntegerAsResult" xml:space="preserve">
-    <value>Allows you to return an integer as the result. 1 - True, 0 - False, -1 - Error</value>
+    <value>Allows you to return an integer as the result. 0 - True, -1 - Error/False</value>
   </data>
   <data name="Description" xml:space="preserve">
     <value>Library for generating correct Polish identifiers: PESEL, NIP, REGON and more. Perfect for testing and validating systems.</value>

@@ -151,7 +151,7 @@
     <value>Wartość wejściowa do sprawdzenia</value>
   </data>
   <data name="CliValidatorIntegerAsResult" xml:space="preserve">
-    <value>Umożliwia zwrócenie liczby całkowitej jako wyniku. 1 - Prawda, 0 - Fałsz, -1 - Błąd</value>
+    <value>Umożliwia zwrócenie liczby całkowitej jako wyniku. 0 - Prawda, -1 - Błąd/Fałsz</value>
   </data>
   <data name="Description" xml:space="preserve">
     <value>Biblioteka do generowania poprawnych polskich identyfikatorów: PESEL, NIP, REGON i inne. Idealna do testowania i walidacji systemów.</value>

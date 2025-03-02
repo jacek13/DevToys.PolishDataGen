@@ -43,7 +43,11 @@ internal class PolishDataValidatorCommandLineTool : ICommandLineTool
 
         IPolishIdValidator validator = ValidatorFactory.Create(_idType);
         if (ReturnInteger)
-            return ValueTask.FromResult(Convert.ToInt32(validator.IsValid(Input)));
+        {
+            var isValid = validator.IsValid(Input);
+            var exitCode = isValid ? 0 : -1;
+            return ValueTask.FromResult(exitCode);
+        }
 
         if (ShowExtendedDetails)
         {
